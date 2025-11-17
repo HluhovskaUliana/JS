@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Виведення інформації</title>
+</head>
+<body>
+<div class="temp m1">Тут буде результат innerHTML</div>
+
+<script>
+    // 1. innerHTML
+    var sum = 0.1 + 0.2;
+    var result = document.getElementsByClassName("m1")[0];
+    result.innerHTML = "В JavaScript 0.1 + 0.2 = " + sum;
+    result.style.color = "blue";
+
+    // 2. document.write()
+    document.write("<p>Результат document.write: " + (9 + 10) + "</p>");
+
+    // 3. alert()
+    alert("Важлива інформація!");
+
+    // 4. console.log()
+    console.log("Результат console.log: " + (20 + 17));
+</script>
+</body>
+</html>
