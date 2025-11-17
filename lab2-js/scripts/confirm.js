@@ -1,5 +1,5 @@
 ﻿var r = confirm("Готові гризти граніт науки?");
-if (r == true) {
+if (r === true) {
     myTxt.innerHTML = "ВПЕРЕД ДО ЗНАНЬ!";
 } else {
     myTxt.innerHTML = "Мені дуже сумно!";
@@ -16,7 +16,7 @@ myImage.onclick = function () {
     } else {
         myImage.setAttribute('src', 'images/firefox-icon.png');
     }
-    if (j == 3) {
+    if (j === 3) {
         myImage.remove();
         document.write("<h1>Вітаю !</h1><h2>Завдання виконано !</h2>");
     }
