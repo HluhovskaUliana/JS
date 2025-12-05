@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Пункт 5.1 — Видалення останнього символу</title>
+    <style>
+        /* Стилі сторінки */
+        body {
+            background-color: #c7a7a3;
+        }
+    </style>
+</head>
+<body>
+
+<p id="text-line">Це приклад речення для демонстрації.</p>
+<button onclick="deleteLastChar()">ВИДАЛИТИ ОСТАННІЙ СИМВОЛ</button>
+<script>
+    function deleteLastChar() {
+        const el = document.getElementById("text-line");
+        const curr = el.textContent;
+        if (curr.length === 0) return;
+        el.textContent = curr.slice(0, -1);
+    }
+</script>
+</body>
+</html>

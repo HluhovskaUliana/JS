@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Практична 3 — Виведення даних у JavaScript</title>
+    <style>
+        .demo-block { border: 1px solid #ddd; padding: 12px; margin: 12px 0; }
+        .btn { padding: 8px 12px; cursor: pointer; }
+    </style>
+</head>
+<body>
+<h1>Практична 3: Синтаксис JS та виведення даних</h1>
+
+<!-- 1) innerHTML -->
+<div class="demo-block">
+    <h2>1) Виведення через innerHTML</h2>
+    <div class="temp m1" id="m1"></div>
+    <button class="btn" id="btn-inner">Показати 0.1 + 0.2</button>
+</div>
+
+<!-- 2) document.write -->
+<div class="demo-block">
+    <h2>2) document.write()</h2>
+    <p>Натисни кнопку — сторінку буде перезаписано (демо).</p>
+    <button class="btn" id="btn-write">Перезаписати сторінку</button>
+</div>
+
+<!-- 3) window.alert -->
+<div class="demo-block">
+    <h2>3) window.alert()</h2>
+    <button class="btn" id="btn-alert">Показати alert зі сумою</button>
+</div>
+
+<!-- 4) console.log -->
+<div class="demo-block">
+    <h2>4) console.log()</h2>
+    <button class="btn" id="btn-console">Залогувати 20 + 17</button>
+    <p>Відкрий консоль (F12 → Console) і натисни кнопку.</p>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
