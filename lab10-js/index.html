@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <title>Перегляд фотографій</title>
+    <script>
+        var photo = new Array();
+
+        // Попереднє завантаження зображень
+        photo["mist"] = new Image(400, 300);
+        photo["mist"].src = "images/bridge.jpg";
+
+        photo["lis"] = new Image(400, 300);
+        photo["lis"].src = "images/forest.jpg";
+
+        photo["ozero"] = new Image(400, 300);
+        photo["ozero"].src = "images/lake.jpg";
+
+        photo["doroga"] = new Image(400, 300);
+        photo["doroga"].src = "images/road.jpg";
+
+        function prosm(list) {
+            let d = list.options[list.selectedIndex].value;
+            document.getElementById("fot").src = photo[d].src;
+        }
+    </script>
+</head>
+<body>
+<h2>Виберіть фотографію</h2>
+<select onchange="prosm(this)">
+    <option value="mist">Міст</option>
+    <option value="lis">Ліс</option>
+    <option value="ozero">Озеро</option>
+    <option value="doroga">Дорога</option>
+</select>
+<br><br>
+<img id="fot" src="mist.jpg" width="400" height="300">
+</body>
+</html>

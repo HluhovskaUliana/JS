@@ -1,0 +1,90 @@
+﻿<html>
+<head>
+    <title>Еліпс трьома способами</title>
+    <style>
+        .section {
+            margin-bottom: 40px;
+        }
+        .controls {
+            margin-bottom: 10px;
+        }
+        .output {
+            border: 1px solid gray;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        // Мозаїка
+        function ellipseMosaic() {
+            let a = parseInt(document.getElementById("a1").value);
+            let b = parseInt(document.getElementById("b1").value);
+            let output = "";
+            for (let t = 0; t <= 2 * Math.PI; t += 0.05) {
+                let x = a * Math.cos(t) + 200;
+                let y = b * Math.sin(t) + 200;
+                output += `<div style="position:absolute;left:${x}px;top:${y}px;width:2px;height:2px;background:black"></div>`;
+            }
+            document.getElementById("mosaic").innerHTML = output;
+        }
+
+        // SVG
+        function ellipseSVG() {
+            let a = parseInt(document.getElementById("a2").value);
+            let b = parseInt(document.getElementById("b2").value);
+            document.getElementById("svgEllipse").setAttribute("rx", a);
+            document.getElementById("svgEllipse").setAttribute("ry", b);
+        }
+
+        // Canvas
+        function ellipseCanvas() {
+            let a = parseInt(document.getElementById("a3").value);
+            let b = parseInt(document.getElementById("b3").value);
+            let ctx = document.getElementById("canvas").getContext("2d");
+            ctx.clearRect(0, 0, 400, 400);
+            ctx.beginPath();
+            ctx.ellipse(200, 200, a, b, 0, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+    </script>
+</head>
+<body>
+<h2>Еліпс трьома способами</h2>
+
+<!-- Мозаїка -->
+<div class="section">
+    <h3>Мозаїка</h3>
+    <div class="controls">
+        a=<input id="a1" value="80">
+        b=<input id="b1" value="40">
+        <button onclick="ellipseMosaic()">Побудувати</button>
+    </div>
+    <div id="mosaic" class="output" style="position:relative;"></div>
+</div>
+
+<!-- SVG -->
+<div class="section">
+    <h3>SVG</h3>
+    <div class="controls">
+        a=<input id="a2" value="80">
+        b=<input id="b2" value="40">
+        <button onclick="ellipseSVG()">Побудувати</button>
+    </div>
+    <svg width="400" height="400" class="output">
+        <ellipse id="svgEllipse" cx="200" cy="200" rx="80" ry="40" style="fill:none;stroke:red;stroke-width:2"/>
+    </svg>
+</div>
+
+<!-- Canvas -->
+<div class="section">
+    <h3>Canvas</h3>
+    <div class="controls">
+        a=<input id="a3" value="80">
+        b=<input id="b3" value="40">
+        <button onclick="ellipseCanvas()">Побудувати</button>
+    </div>
+    <canvas id="canvas" width="400" height="400" class="output"></canvas>
+</div>
+
+</body>
+</html>
