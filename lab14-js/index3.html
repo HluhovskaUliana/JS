@@ -1,0 +1,18 @@
+﻿<html>
+<head>
+    <title>Пошук шаблону</title>
+    <script>
+        function findPattern(str) {
+            let regexp = /d(b+)(d)/gi;
+            let result = str.match(regexp);
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+<h2>Пошук шаблону d+b+d</h2>
+<input type="text" id="text" value="cdbBdbsbz">
+<button onclick="findPattern(document.getElementById('text').value)">Знайти</button>
+</body>
+</html>
+

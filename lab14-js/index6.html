@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+    <title>Сувора перевірка емейлу</title>
+    <script>
+        function checkEmail(email) {
+            let regexp = /^[A-Za-z0-9]+([_\-]?[A-Za-z0-9]+)*@[A-Za-z0-9]+\.[A-Za-z]{2,}$/;
+            if (regexp.test(email)) {
+                alert("Email коректний!");
+            } else {
+                alert("Email некоректний!");
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Сувора перевірка емейлу</h2>
+<input type="text" id="email" value="my_mail@gmail.com">
+<button onclick="checkEmail(document.getElementById('email').value)">Перевірити</button>
+</body>
+</html>
+

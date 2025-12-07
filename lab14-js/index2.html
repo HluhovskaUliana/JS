@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+    <title>Перевірка емейлу</title>
+    <script>
+        function checkEmail(email) {
+            let regexp = /\S+@\S+\.\S+/;
+            if (regexp.test(email)) {
+                alert("Email коректний");
+            } else {
+                alert("Email некоректний");
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Перевірка емейлу</h2>
+<input type="text" id="email" value="Qmail2@gmail.com">
+<button onclick="checkEmail(document.getElementById('email').value)">Перевірити</button>
+</body>
+</html>
+

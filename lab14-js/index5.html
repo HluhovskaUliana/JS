@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+    <title>Перевірка картки</title>
+    <script>
+        function checkCard(num) {
+            let regexp = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+            if (regexp.test(num)) {
+                alert("Номер картки коректний");
+            } else {
+                alert("Номер картки некоректний");
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Перевірка номера картки</h2>
+<input type="text" id="card" value="9999-9999-9999-9999">
+<button onclick="checkCard(document.getElementById('card').value)">Перевірити</button>
+</body>
+</html>
+

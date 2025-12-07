@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+    <title>Перевірка першої літери</title>
+    <script>
+        function upperCase(str) {
+            let regexp = /^[A-Z]/;
+            if (regexp.test(str)) {
+                alert("Рядок починається з великої літери");
+            } else {
+                alert("Рядок починається з малої літери");
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Перевірка першої літери</h2>
+<input type="text" id="text" value="RegExp">
+<button onclick="upperCase(document.getElementById('text').value)">Перевірити</button>
+</body>
+</html>
+

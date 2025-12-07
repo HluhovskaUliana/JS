@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+    <title>Перевірка логіна</title>
+    <script>
+        function checkLogin(login) {
+            let regexp = /^[A-Za-z][A-Za-z0-9]{1,9}$/;
+
+            let numbers = login.match(/\d+(\.\d+)?/g);
+
+            if (regexp.test(login)) {
+                alert("Логін коректний\nЗнайдені числа: " + (numbers ? numbers.join(", ") : "немає"));
+            } else {
+                alert("Логін некоректний\nЗнайдені числа: " + (numbers ? numbers.join(", ") : "немає"));
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Перевірка логіна</h2>
+<input type="text" id="login" value="ee1.1ret3">
+<button onclick="checkLogin(document.getElementById('login').value)">Перевірити</button>
+</body>
+</html>
+

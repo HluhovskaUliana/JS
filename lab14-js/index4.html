@@ -1,0 +1,18 @@
+﻿<html>
+<head>
+    <title>Перестановка підрядків</title>
+    <script>
+        function swapSubstrings(str) {
+            let regexp = /^(\w+)\s+(\w+)$/;
+            let result = str.replace(regexp, "$2, $1");
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+<h2>Перестановка підрядків</h2>
+<input type="text" id="text" value="Java Script">
+<button onclick="swapSubstrings(document.getElementById('text').value)">Переставити</button>
+</body>
+</html>
+
