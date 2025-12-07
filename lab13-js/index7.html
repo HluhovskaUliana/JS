@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+    <title>Країни та міста</title>
+    <script>
+        let citiesByCountry = {
+            ger: ["Berlin", "Hamburg", "Munich"],
+            usa: ["New-York", "Washington", "Boston", "Chicago"],
+            ukr: ["Kyiv", "Lviv", "Odesa", "Kharkiv"]
+        };
+
+        function updateCities() {
+            let country = document.getElementById("country").value;
+            let cities = document.getElementById("cities");
+            cities.innerHTML = "";
+            citiesByCountry[country].forEach(city => {
+                let opt = document.createElement("option");
+                opt.text = city;
+                cities.add(opt);
+            });
+            document.querySelector("p").innerHTML = "Обрана країна: " + country + ", місто: " + citiesByCountry[country][0];
+        }
+
+        function showSelection() {
+            let country = document.getElementById("country").value;
+            let city = document.getElementById("cities").value;
+            document.querySelector("p").innerHTML = "Обрана країна: " + country + ", місто: " + city;
+        }
+    </script>
+</head>
+<body>
+<select id="country" onchange="updateCities()">
+    <option value="ger">Germany</option>
+    <option value="usa">USA</option>
+    <option value="ukr">Ukraine</option>
+</select>
+<select id="cities" onchange="showSelection()"></select>
+<p></p>
+</body>
+</html>

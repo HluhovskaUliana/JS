@@ -1,0 +1,14 @@
+﻿<html>
+<head>
+    <title>Live button</title>
+    <script>
+        function pressed() { document.getElementById("msg").innerHTML = "I was pressed!"; }
+        function mouseOn() { document.getElementById("msg").innerHTML = "Mouse on me!"; }
+        function mouseOut() { document.getElementById("msg").innerHTML = "Mouse is not on me!"; }
+    </script>
+</head>
+<body>
+<button onclick="pressed()" onmouseover="mouseOn()" onmouseout="mouseOut()">Live button!</button>
+<p id="msg"></p>
+</body>
+</html>

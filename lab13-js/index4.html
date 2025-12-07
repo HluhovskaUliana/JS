@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+    <title>Видалення елемента</title>
+    <script>
+        function deleteOption() {
+            let sel = document.getElementById("names");
+            sel.remove(sel.selectedIndex);
+        }
+    </script>
+</head>
+<body>
+<select id="names">
+    <option>Peter</option>
+    <option>John</option>
+    <option>Alise</option>
+    <option>Alex</option>
+    <option>Iren</option>
+</select>
+<button onclick="deleteOption()">Choose and Delete</button>
+</body>
+</html>

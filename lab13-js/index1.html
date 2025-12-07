@@ -1,0 +1,16 @@
+﻿<html>
+<head>
+    <title>Робота з вікном</title>
+    <script>
+        function openWin() {
+            let myWin = window.open("", "", "width=300,height=300");
+            setTimeout(() => myWin.resizeTo(500, 500), 2000);
+            setTimeout(() => myWin.moveTo(200, 200), 4000);
+            setTimeout(() => myWin.close(), 6000);
+        }
+    </script>
+</head>
+<body>
+<button onclick="openWin()">Відкрити вікно</button>
+</body>
+</html>

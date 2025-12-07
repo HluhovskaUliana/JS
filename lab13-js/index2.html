@@ -1,0 +1,19 @@
+﻿<html>
+<head>
+    <title>Зміна стилю</title>
+    <script>
+        function changeCSS() {
+            let p = document.getElementById("text");
+            p.style.color = "orange";
+            p.style.fontSize = "20px";
+            p.style.fontFamily = "Comic Sans MS";
+        }
+    </script>
+</head>
+<body>
+<p id="text">I learning JavaScript events!</p>
+<div>
+    <button onclick="changeCSS()">Change style!</button>
+</div>
+</body>
+</html>

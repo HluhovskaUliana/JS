@@ -1,0 +1,14 @@
+﻿<html>
+<head>
+    <title>Розмір вікна</title>
+    <script>
+        function showSize() {
+            document.getElementById("size").innerHTML = "Width: " + window.innerWidth + ", Height: " + window.innerHeight;
+        }
+        window.onresize = showSize;
+    </script>
+</head>
+<body onload="showSize()">
+<p id="size"></p>
+</body>
+</html>
