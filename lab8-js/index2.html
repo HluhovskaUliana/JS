@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+    <title>Завдання 2.2</title>
+    <script>
+        function handleEvent(evt) {
+            let e = evt || window.event;
+            let elem = e.target || e.srcElement;
+
+            if (elem.id === "caption") {
+                elem.style.color = (elem.style.color === "blue") ? "red" : "blue";
+            }
+            if (elem.id === "image") {
+                elem.src = (elem.src.includes("cat1.jpg")) ? "cat2.jpg" : "cat1.jpg";
+                document.getElementById("caption").innerHTML =
+                    (elem.src.includes("cat1.jpg")) ? "Це перше зображення" : "Це друге зображення";
+            }
+        }
+    </script>
+</head>
+<body onclick="handleEvent(event)">
+<img id="image" src="cat1.jpg" width="200">
+<p id="caption">Це перше зображення</p>
+</body>
+</html>

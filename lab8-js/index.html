@@ -1,0 +1,49 @@
+﻿<html>
+<head>
+    <title>Лабораторна №8</title>
+    <script>
+        let flag = false;
+
+        function clickText() {
+            let el = document.getElementById("line2");
+            if (!flag) {
+                el.style.fontSize = "48pt";
+                el.style.color = "white";
+                el.style.background = "lightblue";
+                flag = true;
+            } else {
+                el.style.fontSize = "16pt";
+                el.style.color = "black";
+                el.style.background = "transparent";
+                flag = false;
+            }
+        }
+
+        function mouseDownText() {
+            document.getElementById("line3").style.background = "green";
+        }
+
+        function mouseUpText() {
+            document.getElementById("line3").style.background = "yellow";
+        }
+
+        function mouseOverText() {
+            document.getElementById("line4").style.background = "red";
+        }
+
+        function mouseOutText() {
+            document.getElementById("line4").style.background = "lightblue";
+        }
+    </script>
+</head>
+<body>
+<h2 id="line1">П'ять подій з мишкою</h2>
+<p id="line2" onclick="clickText()">Клацніть на мене мишкою</p>
+<p id="line3" onmousedown="mouseDownText()" onmouseup="mouseUpText()">
+    На цьому тексті натисніть, потримайте і відпустіть ліву кнопку мишки
+</p>
+<p id="line4" onmouseover="mouseOverText()" onmouseout="mouseOutText()">
+    Повільно проведіть курсором мишки по цій написи
+</p>
+</body>
+</html>
