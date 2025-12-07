@@ -1,0 +1,50 @@
+﻿<html>
+<head>
+    <title>Тригонометричні функції</title>
+    <script>
+        function validateAngle(fld) {
+            let x = fld.value;
+            if (isNaN(x) || x <= 0 || x >= 90) {
+                alert("Кут має бути числом >0 і <90");
+                fld.focus();
+                fld.select();
+            }
+        }
+
+        function calculate() {
+            let angle = document.getElementById("angle").value;
+            let func = document.getElementById("func").value;
+
+            if (isNaN(angle) || angle <= 0 || angle >= 90) {
+                alert("Введіть правильний кут (0 < кут < 90)");
+                return;
+            }
+
+            let radians = angle * Math.PI / 180;
+            let expr = "Math." + func + "(" + radians + ")";
+            let result = eval(expr);
+
+            document.getElementById("output").innerHTML =
+                func + "(" + angle + "°) = " + result.toFixed(4);
+        }
+    </script>
+</head>
+<body>
+<h2>Тригонометричні функції</h2>
+<p>Кут повинен бути більше 0 і менше 90 градусів</p>
+
+Кут в градусах:
+<input type="text" id="angle" onchange="validateAngle(this)"> <br><br>
+
+Функція:
+<select id="func">
+    <option value="sin">Синус</option>
+    <option value="cos">Косинус</option>
+    <option value="tan">Тангенс</option>
+</select><br><br>
+
+<button onclick="calculate()">Обчислити</button>
+
+<p id="output"></p>
+</body>
+</html>
