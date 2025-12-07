@@ -15,7 +15,6 @@
         }
     </style>
     <script>
-        // Мозаїка
         function ellipseMosaic() {
             let a = parseInt(document.getElementById("a1").value);
             let b = parseInt(document.getElementById("b1").value);
@@ -28,7 +27,6 @@
             document.getElementById("mosaic").innerHTML = output;
         }
 
-        // SVG
         function ellipseSVG() {
             let a = parseInt(document.getElementById("a2").value);
             let b = parseInt(document.getElementById("b2").value);
@@ -36,7 +34,6 @@
             document.getElementById("svgEllipse").setAttribute("ry", b);
         }
 
-        // Canvas
         function ellipseCanvas() {
             let a = parseInt(document.getElementById("a3").value);
             let b = parseInt(document.getElementById("b3").value);
