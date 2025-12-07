@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+    <title>Облік товарів</title>
+    <script>
+        function updateTable() {
+            let product = document.getElementById("product").value;
+            let price = parseFloat(document.getElementById("price").value);
+            let quantity = parseInt(document.getElementById("quantity").value);
+
+            if (isNaN(price) || isNaN(quantity)) {
+                alert("Введіть правильні числові значення!");
+                return;
+            }
+
+            let table = document.getElementById("goods");
+            let total = 0;
+
+            for (let i = 1; i < table.rows.length - 1; i++) {
+                if (table.rows[i].cells[0].innerHTML === product) {
+                    table.rows[i].cells[1].innerHTML = price;
+                    table.rows[i].cells[2].innerHTML = quantity;
+                    table.rows[i].cells[3].innerHTML = price * quantity;
+                }
+                total += parseFloat(table.rows[i].cells[3].innerHTML);
+            }
+
+            table.rows[table.rows.length - 1].cells[3].innerHTML = total;
+        }
+    </script>
+</head>
+<body>
+<h2>Облік надходження товарів</h2>
+<table id="goods" border="1">
+    <tr><th>Назва товару</th><th>Ціна за одиницю</th><th>Кількість</th><th>Вартість</th></tr>
+    <tr><td>Стіл письмовий</td><td>12000</td><td>5</td><td>60000</td></tr>
+    <tr><td>Стіл кухонний</td><td>8000</td><td>10</td><td>80000</td></tr>
+    <tr><td>Стілець</td><td>20</td><td>1200</td><td>24000</td></tr>
+    <tr><td>Шафа книжкова</td><td>14200</td><td>4</td><td>56800</td></tr>
+    <tr><td>Разом</td><td></td><td></td><td>220800</td></tr>
+</table>
+
+<h3>Зміна даних</h3>
+Назва товару: <input type="text" id="product" value="Стілець"><br>
+Ціна: <input type="text" id="price" value="25"><br>
+Кількість: <input type="text" id="quantity" value="1000"><br><br>
+<button onclick="updateTable()">Оновити</button>
+</body>
+</html>

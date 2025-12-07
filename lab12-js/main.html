@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+    <title>Тригонометричні функції</title>
+    <script>
+        function openTable() {
+            let start = parseFloat(document.getElementById("start").value);
+            let end = parseFloat(document.getElementById("end").value);
+            let step = parseFloat(document.getElementById("step").value);
+
+            if (isNaN(start) || isNaN(end) || isNaN(step) || step <= 0) {
+                alert("Введіть правильні числові значення!");
+                return;
+            }
+
+            let newWin = window.open("", "", "width=600,height=400");
+            let html = "<h2 align='center'>Таблиця значень sin(x)</h2>";
+            html += "<table border='1' align='center'><tr><th>Кут (°)</th><th>Кут (рад)</th><th>sin</th></tr>";
+
+            for (let x = start; x <= end; x += step) {
+                let rad = x * Math.PI / 180;
+                html += "<tr><td>" + x.toFixed(2) + "</td><td>" + rad.toFixed(4) + "</td><td>" + Math.sin(rad).toFixed(4) + "</td></tr>";
+            }
+
+            html += "</table>";
+            newWin.document.write(html);
+        }
+    </script>
+</head>
+<body>
+<h2>Введіть діапазон кутів</h2>
+Початок: <input type="text" id="start" value="30"><br>
+Кінець: <input type="text" id="end" value="40"><br>
+Крок: <input type="text" id="step" value="2"><br><br>
+<button onclick="openTable()">Обчислити</button>
+</body>
+</html>
